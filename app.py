@@ -68,7 +68,7 @@ def main():
     page_title="FAQ",
     page_icon=":incoming_envelope:")
 
-    st.title("_Labio Data :red[FAQ EMAIL]_ :e-mail:")
+    st.title("_Labio :red[FAQ EMAIL]_ :e-mail:")
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
@@ -95,7 +95,7 @@ def main():
 
     if 'messages' not in st.session_state:
         st.session_state['messages'] = [{"role": "assistant", 
-                                        "content": "안녕하세요! 이메일내용을 알려주세요"}]
+                                        "content": "업로드한 자료를 기반으로 답변메일을 제공해드리겠습니다. 이메일내용을 알려주세요"}]
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
