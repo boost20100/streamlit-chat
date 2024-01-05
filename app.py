@@ -82,7 +82,7 @@ def main():
     with st.sidebar:
         uploaded_files =  st.file_uploader("Upload your file",type=['pdf'],accept_multiple_files=True)
         openai_api_key = st.secrets.public_data_api.openai_api_key
-        process = st.button("Process")
+        process = st.button("Upload")
     if process:
         files_text = get_text(uploaded_files)
         text_chunks = get_text_chunks(files_text)
@@ -104,7 +104,7 @@ def main():
     #history = StreamlitChatMessageHistory(key="chat_messages")
 
     # Chat logic
-    if query := st.chat_input("질문을 입력해주세요."):
+    if query := st.chat_input("이메일 내용을 입력해주세요."):
         st.session_state.messages.append({"role": "user", "content": query})
 
         with st.chat_message("user"):
